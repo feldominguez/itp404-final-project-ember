@@ -1,0 +1,78 @@
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+
+    {{#paper-sidenav
+            class="md-whiteframe-z2"
+            name="left"
+            open=leftSideBarOpen
+            onToggle=(action (mut leftSideBarOpen))
+    }}
+
+        {{#paper-toolbar as |toolbar|}}
+            {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
+        {{/paper-toolbar}}
+        {{#paper-content padding=false}}
+            {{#paper-list}}
+                {{#paper-item class="md-1-line"}}
+                ABOUT
+                {{/paper-item}}
+                {{#paper-item class="md-1-line"}}
+                    BLOG
+                {{/paper-item}}
+                {{#paper-item class="md-1-line"}}
+                    PORTFOLIO
+                {{/paper-item}}
+                {{#paper-item class="md-1-line"}}
+                    RESUME
+                {{/paper-item}}
+
+            {{/paper-list}}
+
+        {{/paper-content}}
+
+    {{/paper-sidenav}}
+
+    {{#paper-card-content class="flex"}}
+        <div class="layout-fill layout-align-start-center layout-column" style="height: 100vh">
+
+            {{#paper-toolbar}}
+
+                {{#paper-toolbar-tools}}
+
+                    {{#paper-sidenav-toggle name="left" as |toggleAction|}}
+
+                        {{#paper-button iconButton=true classNames="hide-gt-md" onClick=(action toggleAction)}}
+                            {{paper-icon "menu" }}
+                        {{/paper-button}}
+
+
+                    {{/paper-sidenav-toggle}}
+
+                {{/paper-toolbar-tools}}
+
+
+
+            {{/paper-toolbar}}
+
+            <p>
+                The left sidenav will "lock open" on a medium (>=960px wide) device.
+            </p>
+            <p>
+                Left sidenav is {{if leftSideBarOpen "opened" "closed"}}
+            </p>
+
+            {{#paper-sidenav-toggle name="left" as |toggleAction|}}
+                {{#paper-button raised=true classNames="hide-gt-md" onClick=(action toggleAction)}}
+                    Toggle
+                {{/paper-button}}
+            {{/paper-sidenav-toggle}}
+
+        </div>
+    {{/paper-card-content}}
+
+
+{{/paper-sidenav-container}}
+
+
+
+{{outlet}}
