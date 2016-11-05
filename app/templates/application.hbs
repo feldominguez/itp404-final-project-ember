@@ -9,13 +9,39 @@
     }}
 
         {{#paper-toolbar as |toolbar|}}
-            {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
+            {{#paper-toolbar-tools}}fD{{/paper-toolbar-tools}}
         {{/paper-toolbar}}
         {{#paper-content padding=false}}
+
+
+
+       <div id='personal-info-wrap'>
+
+          <div id='pro-top'>
+             <div id='face'></div>
+             <div id='pro-top-intro'>
+                <div id='name'>Felipe Dominguez</div>
+                <div id='pro-title'>Engineer & Designer</div>
+             </div>
+          </div>
+
+          <div id='pro-bottom'>
+             <div id='pro-links'>
+               <i class="mdi mdi-github-circle mdi-24px mdi-light"></i>
+              <i class="mdi mdi-linkedin-box mdi-24px mdi-light"></i>
+              <i class="mdi mdi-email mdi-24px mdi-light"></i>
+            </div>
+          </div>
+
+       </div>
+
+
+
             {{#paper-list}}
                 {{#paper-item class="md-1-line"}}
                 ABOUT
                 {{/paper-item}}
+
                 {{#paper-item class="md-1-line"}}
                     BLOG
                 {{/paper-item}}
@@ -54,7 +80,12 @@
 
             {{/paper-toolbar}}
 
-            <p>
+
+
+
+
+            {{#paper-content padding='true'}}
+            {{!--<p>
                 The left sidenav will "lock open" on a medium (>=960px wide) device.
             </p>
             <p>
@@ -67,12 +98,19 @@
                 {{/paper-button}}
             {{/paper-sidenav-toggle}}
 
+            <p>
+                The left sidenav will "lock open" on a medium (>=960px wide) device.
+            </p>
+            <p>
+                Left sidenav is {{if leftSideBarOpen "opened" "closed"}}
+            </p>--}}
+
+{{outlet}}
+
+
+      {{/paper-content}}
         </div>
     {{/paper-card-content}}
 
 
 {{/paper-sidenav-container}}
-
-
-
-{{outlet}}
